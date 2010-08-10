@@ -10,9 +10,11 @@ begin
     gem.email = "ryan@gymlogr.com"
     gem.homepage = "http://github.com/ryanfitz/mongoid_session_store"
     gem.authors = ["Ryan Fitzgerald"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "shoulda", ">= 0"
     gem.add_dependency('mongoid',   ">= 2.0.0.beta.16")
     gem.add_dependency('actionpack',   ">= 3.0.0.rc")
+    
+    gem.files.exclude 'example/**/*'
   
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

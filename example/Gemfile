@@ -10,7 +10,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mongoid', ">= 2.0.0.beta.16"
 gem 'bson_ext'
 
-gem 'mongoid_session_store', :path => '/Users/fitz/Projects/mongoid_session_store'
+gem 'mongoid_session_store', :path => File.expand_path(File.dirname(__FILE__) + '/..')
 
 # Use unicorn as the web server
 # gem 'unicorn'

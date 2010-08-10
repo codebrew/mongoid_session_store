@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "mongoid_session_store"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{store rails 3 sessions in mongoDB}
+    gem.description = %Q{store rails 3 sessions in mongoDB}
     gem.email = "ryan@gymlogr.com"
     gem.homepage = "http://github.com/ryanfitz/mongoid_session_store"
     gem.authors = ["Ryan Fitzgerald"]

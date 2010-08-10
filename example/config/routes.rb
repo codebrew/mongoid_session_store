@@ -1,3 +1,3 @@
-Example::Application.routes.draw do
-  match ':controller(/:action(/:id(.:format)))'
+Example::Application.routes.draw do  
+  match ':action', :to => 'sessions'
 end

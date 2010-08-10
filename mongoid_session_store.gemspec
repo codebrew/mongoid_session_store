@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Fitzgerald"]
-  s.date = %q{2010-08-09}
+  s.date = %q{2010-08-10}
   s.description = %q{store rails 3 sessions in mongoDB}
   s.email = %q{ryan@gymlogr.com}
   s.extra_rdoc_files = [
@@ -31,7 +31,9 @@ Gem::Specification.new do |s|
      "example/README",
      "example/Rakefile",
      "example/app/controllers/application_controller.rb",
+     "example/app/controllers/sessions_controller.rb",
      "example/app/helpers/application_helper.rb",
+     "example/app/helpers/sessions_helper.rb",
      "example/app/views/layouts/application.html.erb",
      "example/config.ru",
      "example/config/application.rb",
@@ -49,6 +51,8 @@ Gem::Specification.new do |s|
      "example/config/locales/en.yml",
      "example/config/mongoid.yml",
      "example/config/routes.rb",
+     "example/db/migrate/20100810035140_add_sessions_table.rb",
+     "example/db/schema.rb",
      "example/db/seeds.rb",
      "example/doc/README_FOR_APP",
      "example/lib/tasks/.gitkeep",
@@ -67,10 +71,14 @@ Gem::Specification.new do |s|
      "example/public/robots.txt",
      "example/public/stylesheets/.gitkeep",
      "example/script/rails",
+     "example/test/functional/sessions_controller_test.rb",
+     "example/test/integration/sessions_test.rb",
      "example/test/performance/browsing_test.rb",
      "example/test/test_helper.rb",
+     "example/test/unit/helpers/sessions_helper_test.rb",
      "example/vendor/plugins/.gitkeep",
      "lib/mongoid_session_store.rb",
+     "lib/mongoid_session_store/mongoid_store.rb",
      "mongoid_session_store.gemspec",
      "test/helper.rb",
      "test/test_mongoid_session_store.rb"

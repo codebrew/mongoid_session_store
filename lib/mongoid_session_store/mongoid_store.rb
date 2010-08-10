@@ -5,9 +5,11 @@ module ActionDispatch
       class Session
         include Mongoid::Document
         include Mongoid::Timestamps
+        
+        store_in :sessions
 
         field :data, :type => String, :default => [Marshal.dump({})].pack("m*")
-        field :session_id, :type => String
+        field :session_id, :type => String, :allow_nil => false
         
         index :updated_at
         index :session_id

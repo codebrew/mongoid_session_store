@@ -1,7 +1,23 @@
 = mongoid_session_store
 
-Description goes here.
+store rails 3 sessions in mongoDB using mongoid.
 
+== Installation
+This gem only works with rails 3 and mongoid 2.0
+
+  gem install mongoid_session_store
+  
+== Setup
+
+In your Gemfile:
+
+  gem "mongoid"
+  gem "mongoid_session_store"
+
+In the session_store initializer (config/initializers/session_store.rb):  
+  require 'mongoid_session_store/mongoid_store'
+  Example::Application.config.session_store :mongoid_store
+  
 == Note on Patches/Pull Requests
  
 * Fork the project.

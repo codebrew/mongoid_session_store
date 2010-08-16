@@ -1,7 +1,7 @@
 PATH
   remote: /Users/fitz/Projects/mongoid_session_store
   specs:
-    mongoid_session_store (0.0.1)
+    mongoid_session_store (0.0.2)
       actionpack (>= 3.0.0.rc)
       mongoid (>= 2.0.0.beta.16)
 
@@ -56,6 +56,7 @@ GEM
       mongo (~> 1.0.3)
       tzinfo (~> 0.3.22)
       will_paginate (~> 3.0.pre)
+    mysql (2.8.1)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.9)
@@ -90,5 +91,6 @@ DEPENDENCIES
   bson_ext
   mongoid (>= 2.0.0.beta.16)
   mongoid_session_store!
+  mysql
   rails (= 3.0.0.rc)
   sqlite3-ruby

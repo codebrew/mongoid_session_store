@@ -1,3 +1,14 @@
+GIT
+  remote: http://github.com/mongoid/mongoid.git
+  revision: dab07d8
+  specs:
+    mongoid (2.0.0.beta.16)
+      activemodel (= 3.0.0.rc)
+      bson (= 1.0.4)
+      mongo (= 1.0.7)
+      tzinfo (= 0.3.22)
+      will_paginate (~> 3.0.pre)
+
 PATH
   remote: /Users/fitz/Projects/mongoid_session_store
   specs:
@@ -50,12 +61,6 @@ GEM
     mime-types (1.16)
     mongo (1.0.7)
       bson (>= 1.0.4)
-    mongoid (2.0.0.beta9)
-      activemodel (~> 3.0.0.beta)
-      bson (~> 1.0.3)
-      mongo (~> 1.0.3)
-      tzinfo (~> 0.3.22)
-      will_paginate (~> 3.0.pre)
     mysql (2.8.1)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -89,7 +94,7 @@ PLATFORMS
 
 DEPENDENCIES
   bson_ext
-  mongoid (>= 2.0.0.beta.16)
+  mongoid!
   mongoid_session_store!
   mysql
   rails (= 3.0.0.rc)

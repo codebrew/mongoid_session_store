@@ -8,7 +8,7 @@ gem 'rails', '3.0.0.rc'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql'
 
-gem 'mongoid', ">= 2.0.0.beta.16"
+gem "mongoid", :git => "http://github.com/mongoid/mongoid.git"
 gem 'bson_ext'
 
 gem 'mongoid_session_store', :path => File.expand_path(File.dirname(__FILE__) + '/..')

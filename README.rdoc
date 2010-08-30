@@ -15,7 +15,11 @@ In your Gemfile:
   gem "bson_ext", "1.0.4"
   gem "mongoid_session_store"
 
-In the session_store initializer (config/initializers/session_store.rb):  
+In the session_store initializer (config/initializers/session_store.rb) you can comment out every line as
+mongoid session store will be setup for use when added to the gemfile. 
+
+If you want to be more explicit you can comment the currently setup store and add: 
+ 
   Example::Application.config.session_store :mongoid_store
   
 == Rake Tasks

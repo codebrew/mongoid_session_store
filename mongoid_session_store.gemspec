@@ -28,6 +28,8 @@ Gem::Specification.new do |s|
      "example/.gitignore",
      "lib/mongoid_session_store.rb",
      "lib/mongoid_session_store/mongoid_store.rb",
+     "lib/mongoid_session_store/railtie.rb",
+     "lib/mongoid_session_store/railties/sessions.rake",
      "mongoid_session_store.gemspec",
      "test/helper.rb",
      "test/test_mongoid_session_store.rb"

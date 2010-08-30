@@ -11,12 +11,17 @@ This gem only works with rails 3 and mongoid 2.0
 
 In your Gemfile:
 
-  gem "mongoid"
+  gem "mongoid", :git => "http://github.com/mongoid/mongoid.git"
+  gem "bson_ext", "1.0.4"
   gem "mongoid_session_store"
 
 In the session_store initializer (config/initializers/session_store.rb):  
-  require 'mongoid_session_store/mongoid_store'
   Example::Application.config.session_store :mongoid_store
+  
+== Rake Tasks
+Mongoid Session Store comes with a rake task to clear out the sessions it stores in mongoDB
+
+  rake db:mongoid:sessions:clear 
   
 == Note on Patches/Pull Requests
  

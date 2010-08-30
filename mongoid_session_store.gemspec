@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mongoid_session_store}
-  s.version = "1.0.0.beta1"
+  s.version = "1.0.0.beta2"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Fitzgerald"]
-  s.date = %q{2010-08-29}
+  s.date = %q{2010-08-30}
   s.description = %q{store rails 3 sessions in mongoDB}
   s.email = %q{ryan@gymlogr.com}
   s.extra_rdoc_files = [

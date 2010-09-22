@@ -1,18 +1,18 @@
 module ActionDispatch
   module Session
     class MongoidStore < AbstractStore
-      
+
       class Session
         include Mongoid::Document
         include Mongoid::Timestamps
-        
+
         store_in :sessions
 
+        identity :type => String
+
         field :data, :type => String, :default => [Marshal.dump({})].pack("m*")
-        field :session_id, :type => String, :allow_nil => false
-        
+
         index :updated_at
-        index :session_id
       end
 
       # The class used for session storage.
@@ -22,8 +22,8 @@ module ActionDispatch
       SESSION_RECORD_KEY = 'rack.session.record'.freeze
 
       private
-            
-        def get_session(env, sid)    
+
+        def get_session(env, sid)
           session = find_session(sid)
           env[SESSION_RECORD_KEY] = session
           [sid, unpack(session.data)]
@@ -39,16 +39,16 @@ module ActionDispatch
           record.save ? sid : false
         end
 
-        def find_session(id)   
-          @@session_class.where(:session_id => id).first || @@session_class.new(:session_id => id)
+        def find_session(id)
+          @@session_class.find(id) rescue @@session_class.new(:id => id)
         end
-                
+
         def destroy(env)
           if sid = current_session_id(env)
             find_session(sid).destroy
           end
         end
-        
+
         def get_session_model(env, sid)
           if env[ENV_SESSION_OPTIONS_KEY][:id].nil?
             env[SESSION_RECORD_KEY] = find_session(sid)
@@ -65,7 +65,7 @@ module ActionDispatch
           return nil unless packed
           Marshal.load(packed.unpack("m*").first)
         end
-      
+
     end
   end
 end

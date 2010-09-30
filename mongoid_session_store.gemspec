@@ -55,12 +55,12 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<mongoid>, [">= 2.0.0.beta.16"])
-      s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
+      s.add_dependency(%q<actionpack>, ["~> 3.0"])
     end
   else
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<mongoid>, [">= 2.0.0.beta.16"])
-    s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
+    s.add_dependency(%q<actionpack>, ["~> 3.0"])
   end
 end
 

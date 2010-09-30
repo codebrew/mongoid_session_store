@@ -40,7 +40,7 @@ module ActionDispatch
         end
 
         def find_session(id)
-          @@session_class.find(id) rescue @@session_class.new(:id => id)
+          @@session_class.find_or_create_by(:id => id)
         end
 
         def destroy(env)

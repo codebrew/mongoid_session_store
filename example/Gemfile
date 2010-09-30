@@ -9,7 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql'
 
 gem "mongoid", :git => "http://github.com/mongoid/mongoid.git"
-gem "bson_ext", "1.0.4"
+gem "bson_ext", "1.0.7"
 
 gem 'mongoid_session_store', :path => File.expand_path(File.dirname(__FILE__) + '/..')
 

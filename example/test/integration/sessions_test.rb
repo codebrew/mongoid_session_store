@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class SessionsTest < ActionDispatch::IntegrationTest
-  fixtures :all
   
   def setup
     # Mongoid.master.collections.select {|c| c.name !~ /system/ }.each(&:drop)

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '~> 3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,8 +8,8 @@ gem 'rails', '3.0.0'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql'
 
-gem "mongoid", :git => "http://github.com/mongoid/mongoid.git"
-gem "bson_ext", "1.0.7"
+gem "mongoid", "~> 2.0.0.pre"
+gem "bson_ext", "~> 1.2"
 
 gem 'mongoid_session_store', :path => File.expand_path(File.dirname(__FILE__) + '/..')
 

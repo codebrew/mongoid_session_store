@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'rake'
+require 'bundler'
 
 begin
   require 'jeweler'
@@ -10,13 +11,9 @@ begin
     gem.email = "ryan@gymlogr.com"
     gem.homepage = "http://github.com/ryanfitz/mongoid_session_store"
     gem.authors = ["Ryan Fitzgerald"]
-    gem.add_development_dependency "shoulda", ">= 0"
-    gem.add_dependency('mongoid',   ">= 2.0.0.beta.16")
-    gem.add_dependency('actionpack',   "~> 3.0.0")
+    gem.add_bundler_dependencies
     
-    gem.files.exclude 'example/**/*'
-  
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.files.exclude 'example/**/*'  
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
@@ -43,7 +40,7 @@ rescue LoadError
   end
 end
 
-task :test => :check_dependencies
+task :test
 
 task :default => :test
 

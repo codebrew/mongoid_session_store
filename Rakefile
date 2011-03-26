@@ -8,8 +8,8 @@ begin
     gem.name = "mongoid_session_store"
     gem.summary = %Q{store rails 3 sessions in mongoDB}
     gem.description = %Q{store rails 3 sessions in mongoDB}
-    gem.email = "ryan@gymlogr.com"
-    gem.homepage = "http://github.com/ryanfitz/mongoid_session_store"
+    gem.email = "ryan@codebrewstudios.com"
+    gem.homepage = "https://github.com/codebrew/mongoid_session_store"
     gem.authors = ["Ryan Fitzgerald"]
     gem.add_bundler_dependencies
     

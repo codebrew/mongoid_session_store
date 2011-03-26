@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mongoid_session_store}
-  s.version = "1.1.1"
+  s.version = "1.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Fitzgerald"]
-  s.date = %q{2011-02-13}
+  s.date = %q{2011-03-25}
   s.description = %q{store rails 3 sessions in mongoDB}
-  s.email = %q{ryan@gymlogr.com}
+  s.email = %q{ryan@codebrewstudios.com}
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
@@ -33,9 +33,9 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_mongoid_session_store.rb"
   ]
-  s.homepage = %q{http://github.com/ryanfitz/mongoid_session_store}
+  s.homepage = %q{https://github.com/codebrew/mongoid_session_store}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.0}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{store rails 3 sessions in mongoDB}
   s.test_files = [
     "test/helper.rb",
@@ -50,15 +50,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<activemodel>, ["~> 3.0.0"])
       s.add_runtime_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
-      s.add_runtime_dependency(%q<actionpack>, ["~> 3.0.0"])
-      s.add_runtime_dependency(%q<activemodel>, ["~> 3.0.0"])
-      s.add_runtime_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
-      s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
-      s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
-      s.add_dependency(%q<activemodel>, ["~> 3.0.0"])
-      s.add_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
       s.add_dependency(%q<activemodel>, ["~> 3.0.0"])
       s.add_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
@@ -68,11 +60,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
     s.add_dependency(%q<activemodel>, ["~> 3.0.0"])
     s.add_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
-    s.add_dependency(%q<activemodel>, ["~> 3.0.0"])
-    s.add_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])    
   end
 end
 

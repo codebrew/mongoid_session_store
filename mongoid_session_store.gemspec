@@ -50,7 +50,15 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<activemodel>, ["~> 3.0.0"])
       s.add_runtime_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_runtime_dependency(%q<actionpack>, ["~> 3.0.0"])
+      s.add_runtime_dependency(%q<activemodel>, ["~> 3.0.0"])
+      s.add_runtime_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
+      s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
+      s.add_dependency(%q<activemodel>, ["~> 3.0.0"])
+      s.add_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
       s.add_dependency(%q<activemodel>, ["~> 3.0.0"])
       s.add_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
@@ -60,7 +68,11 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
     s.add_dependency(%q<activemodel>, ["~> 3.0.0"])
     s.add_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
-    s.add_dependency(%q<jeweler>, [">= 0"])    
+    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
+    s.add_dependency(%q<activemodel>, ["~> 3.0.0"])
+    s.add_dependency(%q<mongoid>, ["~> 2.0.0.pre"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end
 

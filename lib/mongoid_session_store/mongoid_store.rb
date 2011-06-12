@@ -20,7 +20,7 @@ module ActionDispatch
       self.session_class = Session
 
       SESSION_RECORD_KEY = 'rack.session.record'.freeze
-      ENV_SESSION_OPTIONS_KEY = Rack::Session::Abstract::ENV_SESSION_OPTIONS_KEY if ENV_SESSION_OPTIONS_KEY
+      ENV_SESSION_OPTIONS_KEY = Rack::Session::Abstract::ENV_SESSION_OPTIONS_KEY if ENV_SESSION_OPTIONS_KEY.nil?
 
       private
 

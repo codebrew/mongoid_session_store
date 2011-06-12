@@ -20,7 +20,7 @@ module ActionDispatch
       self.session_class = Session
 
       SESSION_RECORD_KEY = 'rack.session.record'.freeze
-      ENV_SESSION_OPTIONS_KEY = Rack::Session::Abstract::ENV_SESSION_OPTIONS_KEY
+      ENV_SESSION_OPTIONS_KEY = Rack::Session::Abstract::ENV_SESSION_OPTIONS_KEY if ENV_SESSION_OPTIONS_KEY
 
       private
 
@@ -31,7 +31,7 @@ module ActionDispatch
           [sid, unpack(session.data)]
         end
 
-        def set_session(env, sid, session_data, options)
+        def set_session(env, sid, session_data, options = nil)
           record = get_session_model(env, sid)
           record.data = pack(session_data)
 

@@ -31,7 +31,7 @@ module ActionDispatch
           [sid, unpack(session.data)]
         end
 
-        def set_session(env, sid, session_data, options)
+        def set_session(env, sid, session_data, options = nil)
           record = get_session_model(env, sid)
           record.data = pack(session_data)
 

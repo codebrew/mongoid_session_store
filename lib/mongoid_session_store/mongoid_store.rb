@@ -20,6 +20,7 @@ module ActionDispatch
       self.session_class = Session
 
       SESSION_RECORD_KEY = 'rack.session.record'.freeze
+      ENV_SESSION_OPTIONS_KEY = 'rack.session.options'.freeze
 
       private
 
@@ -30,7 +31,7 @@ module ActionDispatch
           [sid, unpack(session.data)]
         end
 
-        def set_session(env, sid, session_data)
+        def set_session(env, sid, session_data, options = nil)
           record = get_session_model(env, sid)
           record.data = pack(session_data)
 

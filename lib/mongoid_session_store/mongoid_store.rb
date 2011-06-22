@@ -17,7 +17,7 @@ module ActionDispatch
       self.session_class = Session
       
       SESSION_RECORD_KEY = 'rack.session.record'
-      ENV_SESSION_OPTIONS_KEY = Rack::Session::Abstract::ENV_SESSION_OPTIONS_KEY
+      ENV_SESSION_OPTIONS_KEY = Rack::Session::Abstract::ENV_SESSION_OPTIONS_KEY if ::Rails.version >= "3.1"
 
       private
 
@@ -47,6 +47,10 @@ module ActionDispatch
         #     find_session(sid).destroy
         #   end
         # end
+        
+        def destroy(env)
+          destroy_session(env, current_session_id(env), {})
+        end
         
         def destroy_session(env, session_id, options)
           if sid = current_session_id(env)

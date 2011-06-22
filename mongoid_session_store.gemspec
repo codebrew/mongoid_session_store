@@ -1,9 +1,13 @@
-# Provide a simple gemspec so you can easily use your
-# project in your rails apps through git.
 Gem::Specification.new do |s|
   s.name = "mongoid_session_store"
-  s.summary = "Insert MongoidSessionStore summary."
-  s.description = "Insert MongoidSessionStore description."
+  s.version = "2.0.0.beta1"
+  s.authors     = ["Ryan Fitzgerald", "Code Brew Studios"]
+  s.email       = ["ryan@codebrewstudios.com"]
+  s.homepage    = "http://github.com/codebrew/mongoid_session_store"
+  s.summary = "Store rails 3 sessions in mongoDB."
+  s.description = "Store rails 3 sessions in mongoDB."
   s.files = Dir["lib/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.version = "0.0.1"
+  
+  s.add_dependency('rails', ">= 3.0.0")
+  s.add_dependency('mongoid', '~> 2.0.0')
 end

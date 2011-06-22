@@ -1,4 +1,6 @@
 Dummy::Application.routes.draw do
+  match ':action', :to => 'sessions'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

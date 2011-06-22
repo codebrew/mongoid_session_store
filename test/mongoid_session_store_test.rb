@@ -1,7 +1,13 @@
 require 'test_helper'
 
-class MongoidSessionStoreTest < ActiveSupport::TestCase
-  test "truth" do
-    assert_kind_of Module, MongoidSessionStore
+class MongoidSessionStoreTest < ActionDispatch::IntegrationTest
+  setup do
+    ActionDispatch::Session::MongoidStore::Session.destroy_all
+  end
+        
+  test "getting nil session value" do
+    get '/get_session_value'
+    assert_response :success
+    assert_equal 'foo: nil', response.body
   end
 end

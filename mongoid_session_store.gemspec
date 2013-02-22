@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.files = Dir["lib/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   
   s.add_dependency('rails', "~> 3.0")
-  s.add_dependency('mongoid', '~> 3.0.0.rc')
+  s.add_dependency('mongoid', '~> 3.0')
 end

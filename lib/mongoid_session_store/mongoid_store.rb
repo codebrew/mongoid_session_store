@@ -4,7 +4,8 @@ module ActionDispatch
 
       class Session
         include Mongoid::Document
-        
+        include Mongoid::Timestamps
+
         store_in :sessions
 
         identity :type => String

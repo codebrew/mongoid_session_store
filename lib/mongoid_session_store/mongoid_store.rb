@@ -23,8 +23,12 @@ module ActionDispatch
       private
 
         def get_session(env, sid)
-          sid ||= generate_sid
-          session = find_session(sid)
+          unless sid and session = @@session_class.where(:_id => sid).first
+            # If the sid was nil or if there is no pre-existing session under the sid,
+            # force the generation of a new sid and associate a new session associated with the new sid
+            sid = generate_sid
+            session = @@session_class.new(:id => sid)
+          end
           env[SESSION_RECORD_KEY] = session
           [sid, unpack(session.data)]
         end

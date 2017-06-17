@@ -6,7 +6,7 @@ module ActionDispatch
         include Mongoid::Document
         include Mongoid::Timestamps
 
-        store_in :sessions
+        store_in collection: 'sessions'
 
         identity :type => String
 

@@ -4,10 +4,11 @@ module ActionDispatch
 
       class Session
         include Mongoid::Document
-        
-        store_in :sessions
+        include Mongoid::Timestamps
 
-        identity :type => String
+        store_in collection: 'sessions'
+
+        field :_id, :type => String
 
         field :data, :type => String, :default => [Marshal.dump({})].pack("m*")
       end
@@ -22,8 +23,15 @@ module ActionDispatch
       private
 
         def get_session(env, sid)
-          sid ||= generate_sid
-          session = find_session(sid)
+          unless sid and session = @@session_class.where(:_id => sid).first and safe_unpack(session.data)
+            # If the sid was nil or if there is no pre-existing session under the sid or if the session doesn't unpack,
+            # force the generation of a new sid and associate a new session associated with the new sid
+            # See thread for unpack exception upgrading from 3.0 -> 3.1: https://github.com/rails/rails/issues/2509
+            # We handle this by dropping sessions that can't be unpacked.  More elegant patches exist, and we may 
+            # investigate those, but we need an immediate fix.
+            sid = generate_sid
+            session = @@session_class.new(:id => sid)
+          end
           env[SESSION_RECORD_KEY] = session
           [sid, unpack(session.data)]
         end
@@ -39,7 +47,7 @@ module ActionDispatch
         end
 
         def find_session(id)
-          @@session_class.find_or_create_by(:id => id)
+          @@session_class.find_or_initialize_by(:id => id)
         end
 
         # def destroy(env)
@@ -78,6 +86,14 @@ module ActionDispatch
           Marshal.load(packed.unpack("m*").first)
         end
 
+        def safe_unpack(packed)
+          begin
+            unpack(packed)
+          rescue => e
+            nil
+          end
+        end
+      
     end
   end
 end

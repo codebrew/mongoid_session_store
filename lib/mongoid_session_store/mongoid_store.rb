@@ -8,7 +8,7 @@ module ActionDispatch
 
         store_in collection: 'sessions'
 
-        identity :type => String
+        field :_id, :type => String
 
         field :data, :type => String, :default => [Marshal.dump({})].pack("m*")
       end
